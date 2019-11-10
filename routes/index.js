@@ -23,7 +23,7 @@ spotifyApi
   });
 
 router.get("/", (req, res, next) => {
-  res.render("newreleases");
+  res.redirect("/newreleases");
 });
 
 // Retrieve 5 new releases, this will give the releases with whole information

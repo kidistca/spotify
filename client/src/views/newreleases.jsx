@@ -7,8 +7,6 @@ import Card from "react-bootstrap/Card";
 import ListGroup from "react-bootstrap/ListGroup";
 import ListGroupItem from "react-bootstrap/ListGroupItem";
 import Button from "react-bootstrap/Button";
-import Image from "react-bootstrap/Image";
-import { Link } from "react-router-dom";
 
 export default class artists extends Component {
   constructor(props) {
@@ -44,7 +42,7 @@ export default class artists extends Component {
           <h1 className="text-success text-center mt-5">New Released Songs</h1>
           <Row className="mt-5">
             {newreleases.map((releaseItems, index) => (
-              <Col className="mb-5">
+              <Col className="mb-5" key={releaseItems.id}>
                 <Card
                   style={{ width: "11rem", height: "42rem" }}
                   border="success"
@@ -63,7 +61,7 @@ export default class artists extends Component {
                   </Card.Body>
                   <ListGroup className="list-group-flush">
                     {releaseItems.artists.map(artist => (
-                      <Container>
+                      <Container key={artist.id}>
                         <ListGroupItem>
                           <h6>
                             <strong>{artist.name}</strong>{" "}
