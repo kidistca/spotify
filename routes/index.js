@@ -23,7 +23,7 @@ spotifyApi
   });
 
 router.get("/", (req, res, next) => {
-  res.render("index");
+  res.send("index");
 });
 
 // Retrieve 5 new releases, this will give the releases with whole information
