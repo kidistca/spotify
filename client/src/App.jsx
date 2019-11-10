@@ -19,8 +19,8 @@ function App() {
         <Container>
           <Switch>
             <Route path="/" exact component={NewReleasesView} />
-            <Route path="/newreleases" component={NewReleasesView} />
-            <Route path="/artist/:id" exact component={PopularSongsView} />
+            <Route path="/song/newreleases" component={NewReleasesView} />
+            <Route path="/song/artist/:id" exact component={PopularSongsView} />
           </Switch>
         </Container>
       </Router>

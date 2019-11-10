@@ -23,7 +23,7 @@ spotifyApi
   });
 
 router.get("/", (req, res, next) => {
-  res.redirect("/newreleases");
+  res.redirect("/song/newreleases");
 });
 
 // Retrieve 5 new releases, this will give the releases with whole information
@@ -32,7 +32,7 @@ router.get("/newreleases", (req, res, next) => {
     .getNewReleases({ limit: 5 })
     .then(data => {
       res.json(data.body.albums.items);
-      res.redirect("/newreleases");
+      // res.redirect("/newreleases");
       // console.log(data.body.albums.items[0].artists[0].name);
     })
     .catch(error => {

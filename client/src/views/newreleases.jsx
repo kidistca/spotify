@@ -78,7 +78,7 @@ export default class artists extends Component {
                         <Card.Body>
                           <Card.Link
                             className="text-success"
-                            href={`/artist/${artist.id}`}
+                            href={`/song/artist/${artist.id}`}
                           >
                             <Button variant="success" className="rounded-pill">
                               View Popular Song
