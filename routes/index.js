@@ -49,7 +49,6 @@ router.get("/artist/:id", (req, res, next) => {
         a.popularity > b.popularity ? -1 : 1
       );
       res.json(sortedSongs[0]);
-      res.redirect("/popularSongs");
     })
     .catch(error => {
       console.log("Error while retrieving: ", error);

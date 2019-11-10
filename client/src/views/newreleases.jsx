@@ -7,6 +7,7 @@ import Card from "react-bootstrap/Card";
 import ListGroup from "react-bootstrap/ListGroup";
 import ListGroupItem from "react-bootstrap/ListGroupItem";
 import Button from "react-bootstrap/Button";
+import { Link } from "react-router-dom";
 
 export default class artists extends Component {
   constructor(props) {
@@ -39,12 +40,12 @@ export default class artists extends Component {
         </div>
       )) || (
         <Container>
-          <h1 className="text-success text-center mt-5">New Released Songs</h1>
-          <Row className="mt-5">
+          <h1 className="text-success text-center mb-5">New Released Songs</h1>
+          <Row className="">
             {newreleases.map((releaseItems, index) => (
               <Col className="mb-5" key={releaseItems.id}>
                 <Card
-                  style={{ width: "11rem", height: "42rem" }}
+                  style={{ width: "11rem" }}
                   border="success"
                   className="rounded-pill"
                 >
@@ -53,7 +54,7 @@ export default class artists extends Component {
                     className="rounded-circle"
                   />
                   <Card.Body>
-                    <Card.Title className="font-weight-lighter  ml-5 ml-3">
+                    <Card.Title className=" ml-5 ml-3">
                       <h5>
                         <strong className=" ml-3">{index + 1}</strong>
                       </h5>
@@ -76,14 +77,17 @@ export default class artists extends Component {
                           {releaseItems.release_date}
                         </ListGroupItem>
                         <Card.Body>
-                          <Card.Link
+                          <Link
                             className="text-success"
-                            href={`/song/artist/${artist.id}`}
+                            to={`/song/artist/${artist.id}`}
                           >
-                            <Button variant="success" className="rounded-pill">
-                              View Popular Song
+                            <Button
+                              variant="success"
+                              className="rounded-circle"
+                            >
+                              Popular Song
                             </Button>
-                          </Card.Link>
+                          </Link>
                         </Card.Body>
                       </Container>
                     ))}

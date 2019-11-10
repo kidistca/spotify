@@ -13,14 +13,14 @@ function App() {
         alt="website logo"
         width="170px"
         height="50px"
-        className="ml-5 mt-5"
+        className="ml-5 mt-3"
       />
       <Router>
         <Container>
           <Switch>
             <Route path="/" exact component={NewReleasesView} />
+            <Route path="/song/artist/:id" component={PopularSongsView} />
             <Route path="/song/newreleases" component={NewReleasesView} />
-            <Route path="/song/artist/:id" exact component={PopularSongsView} />
           </Switch>
         </Container>
       </Router>
