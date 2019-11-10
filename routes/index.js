@@ -32,6 +32,7 @@ router.get("/newreleases", (req, res, next) => {
     .getNewReleases({ limit: 5 })
     .then(data => {
       res.json(data.body.albums.items);
+      res.redirect("/newreleases");
       // console.log(data.body.albums.items[0].artists[0].name);
     })
     .catch(error => {
@@ -48,7 +49,7 @@ router.get("/artist/:id", (req, res, next) => {
         a.popularity > b.popularity ? -1 : 1
       );
       res.json(sortedSongs[0]);
-      console.log(sortedSongs[0]);
+      res.redirect("/popularSongs");
     })
     .catch(error => {
       console.log("Error while retrieving: ", error);

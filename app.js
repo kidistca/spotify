@@ -11,12 +11,12 @@ const indexRouter = require("./routes/index");
 
 const app = express();
 
+app.use(serveFavicon(join(__dirname, "public/images", "favicon.ico")));
+app.use(express.static(join(__dirname, "client/build")));
 app.use(logger("dev"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(serveFavicon(join(__dirname, "public/images", "favicon.ico")));
-app.use(express.static(join(__dirname, "client/build")));
 
 app.use("/", indexRouter);
 
