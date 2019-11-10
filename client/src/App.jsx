@@ -11,8 +11,8 @@ function App() {
       <img
         src="../spotify-logo.png"
         alt="website logo"
-        width="170px"
-        height="50px"
+        width="145px"
+        height="40px"
         className="ml-5 mt-3"
       />
       <Router>

@@ -41,7 +41,7 @@ export default class popularSongs extends Component {
             <Col>
               <Card
                 className="text-center text-success"
-                style={{ width: "28rem" }}
+                style={{ width: "26rem" }}
                 border="success"
               >
                 <Card.Img variant="top" src={popularSong.album.images[0].url} />
